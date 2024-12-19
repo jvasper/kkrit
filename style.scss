@@ -207,6 +207,9 @@ main img {
 }
 
 @media (max-width: 768px) {
+    header{
+        position: static;
+    }
     header ul {
         flex-direction: column;
         padding: 10px 0;
@@ -245,7 +248,7 @@ main img {
 
     main img {
         max-width: 100%;
-        margin-top: 160px;
+        margin-top: 50px;
     }
     .employments {
         padding: 0;
@@ -289,6 +292,6 @@ main img {
 
     main img {
         max-width: 100%;
-        margin-top: 160px;
+        margin-top: 50px;
     }
 }
