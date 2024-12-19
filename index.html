@@ -7,15 +7,15 @@
     <title>ККРИТ - день открытых дверей</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
 </head>
 
 <body>
+    <div id="app">
     <header>
         <ul>
-            <li>Специальности</li>
-            <li>О колледже</li>
-            <li>День открытых дверей</li>
+            <li @click="scrollTo('.specials_block')">Специальности</li>
+            <li @click="scrollTo('.about_college')">О колледже</li>
+            <li @click="scrollTo('.college_ad')">День открытых дверей</li>
         </ul>
     </header>
     <main>
@@ -29,51 +29,85 @@
         <div class="specials_block">
             <h1>Специальности</h1>
             <div class="swiper-container">
+                <div class="swiper_button swiper_button_l"><</div>
+                <div class="swiper_button swiper_button_r">></div>
                 <div class="swiper-wrapper">
-                    <!-- 10 sample blocks -->
-                    <div class="swiper-slide block">
+                    <div v-for="i in specials" class="swiper-slide block">
                         <h2>Специальность</h2>
-                        <p>Информационные системы и программирование</p>
-                        <p class="role">Программист</p>
-                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
+                        <p>{{ i.title }}</p>
+                        <p class="role">{{ i.role }}</p>
+                        <p class="duration">Длительность обучения<br>{{ i.duration }}</p>
                     </div>
-                    <div class="swiper-slide block">
-                        <h2>Специальность</h2>
-                        <p>Сетевое и системное администрирование</p>
-                        <p class="role">Системный администратор</p>
-                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
-                    </div>
-                    <div class="swiper-slide block">
-                        <h2>Специальность</h2>
-                        <p>Информационные системы и программирование</p>
-                        <p class="role">Администратор баз данных</p>
-                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
-                    </div>
-                    <!-- Repeat similar blocks to make 10 items -->
-                    <div class="swiper-slide block">
-                        <h2>Специальность</h2>
-                        <p>Web-разработка</p>
-                        <p class="role">Frontend-разработчик</p>
-                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
-                    </div>
-                    <!-- Add more blocks as needed -->
                 </div>
-                <!-- Swiper navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </div>
+        <div class="employment">
+            <h1>Доступные отрасли для трудоустройства</h1>
+            <div class="employments">
+                <p>Производственные компании и заводы</p>
+                <p>IT-компании и стартапы</p>
+                <p>Государственные и частные учреждения</p>
+                <p>Фриланс</p>
+            </div>
+        </div>
+        <div class="works">
+            <h1>Возможные должности для трудоустройства после обучения</h1>
+            <div class="swiper-container">
+                <div class="swiper_button swiper_button_l"><</div>
+                <div class="swiper_button swiper_button_r">></div>
+                <div class="swiper-wrapper">
+                    <div v-for="i in works" class="swiper-slide block">
+                        <h2>{{ i.role }}</h2>
+                        <p class="role" v-html="i.description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="college_ad">
+            <h1>Поступай к нам!</h1>
+            <h3>Дни проведения мероприятия “День открытых дверей”</h3>
+            <div class="ad_wrapper">
+                <div class="ad_block">
+                    <h1>Онлайн мероприятие</h1>
+                    <h2>DD.MM.YYYY 
+                        HH:mm</h2>
+                        <p>Трансляция будет проводиться на платформе YouTube
+                            https://youtube.com/url</p>
+                </div>
+                <div class="ad_block">
+                    <h1>Оффлайн мероприятие</h1>
+                    <h2>DD.MM.YYYY 
+                        HH:mm</h2>
+                        <p>Трансляция будет проводиться на платформе YouTube
+                            Адрес: г. Красноярск, пр. Красноярский 156</p>
+                </div>
+            </div>
+        </div>
+        <div class="tg">
+            <h1>Мы в Telegram!</h1>
+            <a href="https://t.me/kraskrit1" target="_blank"><img src="./img/teg.png" alt=""></a><br>
+            <img src="./img/qrcode.png" alt="" style="height: 500px;">
+        </div>
     </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
     <script>
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 20,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.swiper_button_r',
+    prevEl: '.swiper_button_l',
+  },
+  breakpoints: {
+    836: {
+      slidesPerView: 3,
+    },
+  }
+});
+
     </script>
 </body>
 </html>

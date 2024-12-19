@@ -13,7 +13,11 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
 header ul {
     display: flex;
     justify-content: center;
@@ -31,13 +35,12 @@ header ul li {
 
 main {
     flex: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 main img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
+    margin-top: 100px;
 }
 
 .about_college {
@@ -57,6 +60,7 @@ main img {
 
 .specials_block {
     text-align: center;
+    padding: 0 300px 0 300px;
 }
 
 .specials_block h1 {
@@ -69,7 +73,31 @@ main img {
     padding: 20px 0;
     overflow-x: auto;
 }
-
+.swiper_button {
+    content: "";
+    background-color: #000000;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Roboto';
+    color: #fff;
+    font-size: 39px;
+    padding: 0 13px;
+    border-radius: 100%;
+    margin-bottom: 19px;
+    cursor: pointer;
+    user-select: none;
+}
+.swiper-container {
+    overflow-x: clip;
+}
+.works {
+    text-align: center;
+    padding: 0 300px 0 300px;
+    margin-top: 130px;
+}
+.works h1 {
+    margin-bottom: 19px;
+}
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -77,13 +105,13 @@ main img {
 }
 
 .block {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    width: 250px;
-    background-color: #fff;
+    width: 150px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: default;
 }
 
 .block h2 {
@@ -105,4 +133,162 @@ main img {
 .block p.duration {
     font-size: 14px;
     font-weight: bold;
+}
+
+.employment {
+    text-align: center;
+    margin-top: 90px;
+}
+.employments {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+    padding: 15px 400px 0 400px;
+}
+.employments p {
+    color: rgba(132, 132, 132, 1);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 13px;
+}
+.college_ad {
+    text-align: center;
+    margin-top: 100px;
+}
+.ad_wrapper {
+    display: flex;
+    justify-content: center;
+}
+.ad_block {
+    width: 300px;
+    color: rgba(140, 140, 140, 1);
+    margin: 30px 0 0 30px;
+}
+.ad_block h1 {
+    color: #000;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.ad_block h2 {
+    margin-top: 10px;
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+.ad_block p {
+    font-weight: 500;
+}
+.tg {
+    margin-top: 90px;
+    text-align: center;
+}
+.tg img {
+    padding: 0;
+    margin: 15px 0;
+    height: 100px;
+}
+@media (max-width: 1024px) {
+    header ul li {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .specials_block {
+        padding: 0 30px;
+    }
+
+    .swiper-button {
+        font-size: 30px;
+    }
+}
+@media (max-width: 1420px) {
+    .specials_block {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    header ul li {
+        font-size: 18px;
+        margin: 19px 0 0 19px;
+    }
+
+    .about_college h1 {
+        font-size: 28px;
+    }
+
+    .about_college p {
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    .specials_block h1 {
+        font-size: 30px;
+    }
+
+    .swiper-button {
+        font-size: 30px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+    }
+
+    .block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main img {
+        max-width: 100%;
+        margin-top: 160px;
+    }
+    .employments {
+        padding: 0;
+    }
+    .works {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header ul li {
+        font-size: 16px;
+        margin: 19px 0 0 19px;
+    }
+
+    .about_college h1 {
+        font-size: 24px;
+    }
+
+    .about_college p {
+        font-size: 16px;
+        margin: 10px auto;
+    }
+
+    .specials_block h1 {
+        font-size: 26px;
+    }
+
+    .swiper-button {
+        font-size: 24px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+    }
+
+    .block {
+        width: 100%;
+        padding: 15px;
+    }
+
+    main img {
+        max-width: 100%;
+        margin-top: 160px;
+    }
 }
