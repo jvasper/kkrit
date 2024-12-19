@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ККРИТ - день открытых дверей</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>Специальности</li>
+            <li>О колледже</li>
+            <li>День открытых дверей</li>
+        </ul>
+    </header>
+    <main>
+        <img src="./img/title.png" alt="">
+        <div class="about_college">
+            <h1>О колледже</h1>
+            <p>Красноярский колледж информационных технологий и радиоэлектроники (ККРИТ) — это современное учебное
+                заведение, которое предоставляет качественное образование в области информационных технологий,
+                электроники, радиоэлектроники и смежных дисциплин.</p>
+        </div>
+        <div class="specials_block">
+            <h1>Специальности</h1>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 10 sample blocks -->
+                    <div class="swiper-slide block">
+                        <h2>Специальность</h2>
+                        <p>Информационные системы и программирование</p>
+                        <p class="role">Программист</p>
+                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
+                    </div>
+                    <div class="swiper-slide block">
+                        <h2>Специальность</h2>
+                        <p>Сетевое и системное администрирование</p>
+                        <p class="role">Системный администратор</p>
+                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
+                    </div>
+                    <div class="swiper-slide block">
+                        <h2>Специальность</h2>
+                        <p>Информационные системы и программирование</p>
+                        <p class="role">Администратор баз данных</p>
+                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
+                    </div>
+                    <!-- Repeat similar blocks to make 10 items -->
+                    <div class="swiper-slide block">
+                        <h2>Специальность</h2>
+                        <p>Web-разработка</p>
+                        <p class="role">Frontend-разработчик</p>
+                        <p class="duration">Длительность обучения<br>3г. 10 мес</p>
+                    </div>
+                    <!-- Add more blocks as needed -->
+                </div>
+                <!-- Swiper navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
